@@ -1,3 +1,6 @@
+from os.path import basename
+
+
 def read_book(path):
 	with open("books/frankenstein.txt", "r") as file:
 		return file.read()
@@ -18,11 +21,14 @@ def characters_amount(content):
 	return result_dict
 
 
+def report_make(path, amount_ch, ch_dict):
+	filename = basename(path)
+	print("--- Begin report of " + filename + " ---")
+
 if __name__ == '__main__':
-	content = read_book("books/frankenstein.txt")
+	path = "books/frankenstein.txt"
+	content = read_book(path)
 	amount = words_amount(content)
 	characters = characters_amount(content)
 
-	print(characters)
-	print(amount)
-		
+	report_make(path, amount, characters)
