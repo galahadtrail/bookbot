@@ -6,10 +6,23 @@ def words_amount(content):
 	content = content.split(" ")
 	return len(content)
 
+def characters_amount(content):
+	result_dict = {}
+	new_content = content.lower()
+	for character in content:
+		character = character.lower()
+		if character not in result_dict:
+			result_dict[character] = 1
+		else:
+			result_dict[character] += 1
+	return result_dict
+
 
 if __name__ == '__main__':
 	content = read_book("books/frankenstein.txt")
 	amount = words_amount(content)
+	characters = characters_amount(content)
 
+	print(characters)
 	print(amount)
-	
+		
