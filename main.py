@@ -1,3 +1,6 @@
+from colorama import init, Fore
+from colorama import Back
+from colorama import Style
 from os.path import basename
 
 
@@ -23,7 +26,7 @@ def characters_amount(content):
 
 def report_make(path, amount_ch, ch_dict):
 	filename = basename(path)
-	print("--- Begin report of " + filename + " ---")
+	print(Fore.GREEN + "--- Begin report of " + filename + " ---")
 
 if __name__ == '__main__':
 	path = "books/frankenstein.txt"
